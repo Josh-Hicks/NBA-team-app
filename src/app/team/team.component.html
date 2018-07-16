@@ -1,0 +1,8 @@
+<form [formGroup]="teamForm">
+  Team Name: {{teamForm.get('name').value}}
+
+  <p>Players</p>
+  <ul>
+    <li *ngFor="let player of teamForm.get('players').value">{{player.name}}</li>
+  </ul>
+</form>
