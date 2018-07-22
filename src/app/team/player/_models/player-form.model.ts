@@ -1,4 +1,4 @@
-import { FormControl } from '@angular/forms'
+import { FormControl, Validators } from '@angular/forms'
 
 export class PlayerForm {
   firstName = new FormControl();
@@ -13,8 +13,13 @@ export class PlayerForm {
     number: number | undefined = undefined
   ) {
     this.firstName.setValue(firstName);
+    this.firstName.setValidators([Validators.required]);
+
     this.lastName.setValue(lastName);
+
     this.position.setValue(position);
+
     this.number.setValue(number);
+    this.number.setValidators([Validators.required])
   }
 }
