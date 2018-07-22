@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, AbstractControl } from '@angular/forms';
+import { FormGroup, FormArray } from '@angular/forms';
 import { TeamFormService } from './team-form.service';
 import { Subscription } from 'rxjs';
 
@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 export class TeamComponent implements OnInit, OnDestroy {
   teamForm: FormGroup;
   teamFormSub: Subscription;
-  players: AbstractControl;
+  players: FormArray;
 
   constructor(private teamFormService: TeamFormService) { }
 
@@ -19,7 +19,7 @@ export class TeamComponent implements OnInit, OnDestroy {
     this.teamFormSub = this.teamFormService.teamForm$
       .subscribe(team => {
           this.teamForm = team;
-          this.players = team.controls.players;
+          this.players = this.teamForm.get('players') as FormArray;
         })
   }
 
@@ -36,6 +36,7 @@ export class TeamComponent implements OnInit, OnDestroy {
   }
 
   saveTeam() {
+    console.log('saveTeam')
     console.log(this.teamForm.value)
   }
 }

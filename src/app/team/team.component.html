@@ -1,4 +1,4 @@
-<form [formGroup]="teamForm" (ngSubmit)="saveTeam()">
+<form [formGroup]="teamForm">
   Team Name: {{teamForm.controls.name.value}}
 
   <p>Players:</p>
@@ -9,5 +9,5 @@
     </li>
   </ul>
 
-  <button  type="submit" mat-button-raised color="accent">Submit</button>
+  <button  type="submit" mat-button-raised color="accent" (click)="saveTeam()">Submit</button>
 </form>
