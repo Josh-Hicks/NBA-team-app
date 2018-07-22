@@ -1,10 +1,16 @@
-<form [formGroup]="parentform">
-  <label>First Name:</label>
-  <input type="text" formControlName="firstName">
-  <label>Last Name:</label>
-  <input type="text" formControlName="lastName">
-  <label>Position:</label>
-  <input type="text" formControlName="position">
-  <label>Number:</label>
-  <input type="number" formControlName="number">
+<form [formGroup]="playerForm">
+  <mat-form-field>
+    <input matInput formControlName="firstName" placeholder="First Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="lastName" placeholder="Last Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="position" placeholder="Position">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="number" placeholder="Number">
+  </mat-form-field>
+  <!-- emit delete event up w/ index of player -->
+  <button mat-raised-button color="warn" (click)="delete()">Delete</button>
 </form>

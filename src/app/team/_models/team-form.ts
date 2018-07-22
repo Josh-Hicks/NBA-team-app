@@ -1,13 +1,16 @@
 import { FormArray, FormControl } from '@angular/forms';
 
 export class TeamForm {
-    name: FormControl;
-    coaches: FormArray;
-    players: FormArray;
+    name = new FormControl();
+    players = new FormArray([]);
 
-    constructor(name: FormControl = new FormControl(), coaches: FormArray = new FormArray([]), players: FormArray = new FormArray([])) {
-        name
-        coaches
-        players
+    constructor(name?: string, players?: FormArray) {
+        if (name) {
+            this.name.setValue(name);
+        }
+
+        if (players) {
+            this.players.setValue([players]);
+        }
     }
 }
