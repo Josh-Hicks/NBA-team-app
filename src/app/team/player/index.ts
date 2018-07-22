@@ -1,1 +1,1 @@
-export * from './_models';
+export * from './_models/player-form.model';

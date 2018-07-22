@@ -9,5 +9,5 @@
     </li>
   </ul>
 
-  <button  type="submit" mat-button-raised color="accent" (click)="saveTeam()">Submit</button>
+  <button  type="submit" mat-button-raised color="accent" (click)="saveTeam()" [disabled]="teamForm.invalid">Submit</button>
 </form>
