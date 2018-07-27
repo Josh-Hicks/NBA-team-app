@@ -1,1 +1,2 @@
-export * from './team-form';
+export * from './team-form.model';
+export * from './team.model';
