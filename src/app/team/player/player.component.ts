@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, ChangeDetectionStrategy, EventEmitter } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, OnInit, Input, Output, ChangeDetectionStrategy, EventEmitter } from '@angular/core'
+import { FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'nba-player',
@@ -8,16 +8,16 @@ import { FormGroup } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PlayerComponent implements OnInit {
-  @Input() playerForm: FormGroup;
-  @Input() index: number;
-  @Output() deletePlayer: EventEmitter<number> = new EventEmitter();
+  @Input() playerForm: FormGroup
+  @Input() index: number
+  @Output() deletePlayer: EventEmitter<number> = new EventEmitter()
 
   constructor() { }
 
   ngOnInit() {}
 
   delete() {
-    this.deletePlayer.emit(this.index);
+    this.deletePlayer.emit(this.index)
   }
 
 }

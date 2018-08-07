@@ -1,7 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormArray } from '@angular/forms';
-import { TeamFormService } from './team-form.service';
-import { Subscription } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core'
+import { FormGroup, FormArray } from '@angular/forms'
+import { TeamFormService } from './team-form.service'
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'nba-team',
@@ -9,30 +9,30 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./team.component.scss']
 })
 export class TeamComponent implements OnInit, OnDestroy {
-  teamForm: FormGroup;
-  teamFormSub: Subscription;
-  players: FormArray;
+  teamForm: FormGroup
+  teamFormSub: Subscription
+  players: FormArray
 
   constructor(private teamFormService: TeamFormService) { }
 
   ngOnInit() {
     this.teamFormSub = this.teamFormService.teamForm$
       .subscribe(team => {
-          this.teamForm = team;
-          this.players = this.teamForm.get('players') as FormArray;
+          this.teamForm = team
+          this.players = this.teamForm.get('players') as FormArray
         })
   }
 
   ngOnDestroy() {
-    this.teamFormSub.unsubscribe();
+    this.teamFormSub.unsubscribe()
   }
 
   addPlayer() {
-    this.teamFormService.addPlayer();
+    this.teamFormService.addPlayer()
   }
 
   deletePlayer(index: number) {
-    this.teamFormService.deletePlayer(index);
+    this.teamFormService.deletePlayer(index)
   }
 
   saveTeam() {
