@@ -37,7 +37,7 @@ export class TeamComponent implements OnInit, OnDestroy {
   }
 
   saveTeam() {
-    console.log('saveTeam')
+    console.log('team saved!')
     console.log(this.teamForm.value)
   }
 }
