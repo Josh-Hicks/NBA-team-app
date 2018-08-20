@@ -1,0 +1,14 @@
+ul {
+  list-style-type: none;
+}
+
+.status {
+    color: green;
+    font-weight: 800;
+}
+
+.ng-invalid {
+    .status {
+        color: red;
+    }
+}

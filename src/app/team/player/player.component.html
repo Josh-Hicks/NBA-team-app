@@ -1,18 +1,32 @@
 <form [formGroup]="playerForm">
-  <mat-form-field>
-    <input matInput formControlName="firstName" placeholder="First Name">
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput formControlName="lastName" placeholder="Last Name">
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput formControlName="position" placeholder="Position">
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput formControlName="number" placeholder="Number">
-  </mat-form-field>
-  <mat-form-field>
-    <!-- emit delete event up w/ index of player -->
-    <button mat-raised-button color="warn" (click)="delete()">Delete</button>
-  </mat-form-field>
+  <table>
+    <tr>
+      <td>
+        <mat-form-field>
+          <input matInput formControlName="firstName" placeholder="First Name">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input matInput formControlName="lastName" placeholder="Last Name">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input matInput formControlName="position" placeholder="Position">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input matInput formControlName="number" placeholder="Number">
+        </mat-form-field>
+      </td>
+      <td>
+        <!-- emit delete event up w/ index of player -->
+        <button (click)="delete()">Delete</button>
+      </td>
+    </tr>
+  </table>
+  <pre>Player Form Status: <span class="status">{{playerForm.status}}</span></pre>
 </form>
+<mat-divider></mat-divider>

@@ -19,7 +19,7 @@ export class TeamFormService {
 
     currentPlayers.push(
       this.fb.group(
-        new PlayerForm(new Player('Kevin', 'Love', 0, 'Power Forward'))
+        new PlayerForm(new Player())
       )
     )
 

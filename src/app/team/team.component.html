@@ -1,4 +1,4 @@
-<form [formGroup]="teamForm">
+<form [formGroup]="teamForm" >
   Team Name: {{teamForm.controls.name.value}}
 
   <p>Players:</p>
@@ -10,6 +10,5 @@
   </ul>
 
   <button  type="submit" mat-button-raised color="accent" (click)="saveTeam()" [disabled]="teamForm.invalid">Submit</button>
-
-  <pre>{{teamForm.status}}</pre>
+  <pre>Parent Form Status: <span class="status">{{teamForm.status}}</span></pre>
 </form>

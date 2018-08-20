@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs'
 export class TeamComponent implements OnInit, OnDestroy {
   teamForm: FormGroup
   teamFormSub: Subscription
+  formInvalid: boolean = false;
   players: FormArray
 
   constructor(private teamFormService: TeamFormService) { }
