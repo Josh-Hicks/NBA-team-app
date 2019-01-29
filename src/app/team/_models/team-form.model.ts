@@ -11,7 +11,7 @@ export class TeamForm {
         }
 
         if (team.players) {
-            this.players.setValue([team.players])
+            this.players.setValue(team.players)
         }
     }
 }
